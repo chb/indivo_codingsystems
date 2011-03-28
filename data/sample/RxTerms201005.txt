@@ -1,0 +1,5 @@
+RXCUI|GENERIC_RXCUI|TTY|FULL_NAME|RXN_DOSE_FORM|FULL_GENERIC_NAME|BRAND_NAME|DISPLAY_NAME|ROUTE|NEW_DOSE_FORM|STRENGTH|SUPPRESS_FOR|DISPLAY_NAME_SYNONYM|IS_RETIRED
+104490|314231|SBD|Simvastatin 10 MG Oral Tablet [Zocor]|Oral Tablet|Simvastatin 10 MG Oral Tablet|ZOCOR|ZOCOR (Oral-pill)|Oral-pill|Tabs|10 mg|||
+104491|312961|SBD|Simvastatin 20 MG Oral Tablet [Zocor]|Oral Tablet|Simvastatin 20 MG Oral Tablet|ZOCOR|ZOCOR (Oral-pill)|Oral-pill|Tabs|20 mg|||
+104531|312897|SBD|salmeterol 0.021 MG/ACTUAT Inhalant Solution [Serevent]|Inhalant Solution|salmeterol 0.021 MG/ACTUAT Inhalant Solution|SEREVENT|SEREVENT (Inhalant)|Inhalant|Sol|0.021 mg/puff|||
+104532|318142|SBD|salmeterol 0.05 MG/ACTUAT Inhalant Powder [Serevent Diskus]|Inhalant Powder|salmeterol 0.05 MG/ACTUAT Inhalant Powder|SEREVENT DISKUS|SEREVENT DISKUS (Inhalant)|Inhalant|Pwdr|0.05 mg/puff|||
