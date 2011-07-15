@@ -7,6 +7,7 @@ Ben Adida
 
 from django.utils import simplejson
 from loadutils import create_codingsystem
+import os.path
 import csv
 
 from codingsystems import models
@@ -34,7 +35,11 @@ def load(stream, codingsystem, delimiter='\t'):
                                   physician_value = values['component'], consumer_value = values['consumer_name'])
 
 
-def create_and_load_from(filepath):        
+def create_and_load_from(filepath):
+    if not os.path.isfile(filepath):
+        print "Can't load LOINC, the file does not exist at %s" % filepath
+        return
+    
     codingsystem = create_codingsystem('loinc', 'LOINC')
     load(open(filepath, "r"), codingsystem)
 

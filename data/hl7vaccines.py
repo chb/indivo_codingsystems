@@ -7,6 +7,7 @@ Ben Adida
 
 from django.utils import simplejson
 from loadutils import create_codingsystem
+import os.path
 import csv
 
 from codingsystems import models
@@ -29,7 +30,11 @@ def load(stream, codingsystem, delimiter='|'):
                                          additional_fields = values)
 
 
-def create_and_load_from(filepath):        
+def create_and_load_from(filepath):
+    if not os.path.isfile(filepath):
+        print "Can't load HL7 v3.0 Vaccines, the file does not exist at %s" % filepath
+        return
+    
     codingsystem = create_codingsystem('hl7-v3-vaccines', 'HL7 v3.0 Vaccines')
     load(open(filepath, "r"), codingsystem)
 

@@ -7,6 +7,7 @@ Ben Adida
 
 from django.utils import simplejson
 from loadutils import create_codingsystem
+import os.path
 import csv
 
 from codingsystems import models
@@ -29,6 +30,10 @@ def load(stream, codingsystem, delimiter='|'):
                                   physician_value = snomed_fsn, consumer_value = snomed_fsn)
 
 
-def create_and_load_from(filepath):        
+def create_and_load_from(filepath):
+    if not os.path.isfile(filepath):
+        print "Can't load SNOMED, the file does not exist at %s" % filepath
+        return
+    
     codingsystem = create_codingsystem('snomed', 'SNOMED concept codes with UMLS')
     load(open(filepath, "r"), codingsystem)
