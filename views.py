@@ -18,5 +18,5 @@ def coding_system_query(request, system_short_name):
         coding_system = CodingSystem.objects.get(short_name = system_short_name)
     except CodingSystem.DoesNotExist:
         raise Http404
-
-    return [c.toJSONDict() for c in coding_system.search_codes(request.GET['q'], limit = 100)]
+    
+    return [c.toJSONDict() for c in coding_system.search_codes(request.GET.get('q', None), limit = 100)]

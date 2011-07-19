@@ -94,7 +94,9 @@ class CodingSystem(models.Model):
     key_field_name_4 = models.CharField(max_length=50, null=True)
 
     def search_codes(self, query_string, limit = 100):
-        return [c for c in CodedValue.objects.filter(system = self, physician_value__icontains = query_string)[:limit]]
+        if query_string is not None and len(query_string) > 0:
+            return [c for c in CodedValue.objects.filter(system = self, physician_value__icontains = query_string)[:limit]]
+        return []
 
 class CodedValue(models.Model, JSONObject):
     system = models.ForeignKey(CodingSystem)
